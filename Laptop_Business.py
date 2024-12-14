@@ -6,6 +6,9 @@ class Laptop_Business(Laptop):
         super().__init__(marca, procesador, memoria, costo, impuesto)
         self.almacenamiento = almacenamiento
         self.duracion_bateria = duracion_bateria
+    
+    def __str__(self):
+        return (f"Marca: {self.marca}\nProcesador: {self.procesador}\nMemoria: {self.memoria}\nAlmacenamiento: {self.almacenamiento}\nDuracion batería: {self.duracion_bateria}\nPrecio: {self.costo}\nImpuesto: {self.impuesto}\n")
 
     def realizar_diagnostico_sistema(self):
         diagnostico_base = super().realizar_diagnostico_sistema()
@@ -34,7 +37,7 @@ laptop_empresarial = Laptop_Business(
 )
 
 diagnostico = laptop_empresarial.realizar_diagnostico_sistema()
-print(f"Diagnóstico del sistema empresarial: {diagnostico}")
+#print(f"Diagnóstico del sistema empresarial: {diagnostico}")
 
 conectividad = laptop_empresarial.verificar_conectividad_red()
-print(f"Resultados de conectividad de red: {conectividad}")
+#print(f"Resultados de conectividad de red: {conectividad}")
